@@ -70,6 +70,17 @@ footer {
   padding: clamp(1.4rem, 2.2vw, 2.2rem);
 }
 
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(240px, 320px);
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
 .eyebrow {
   margin: 0;
   color: var(--accent-deep);
@@ -106,6 +117,28 @@ h2 {
 
 .hero-intro {
   max-width: 72ch;
+}
+
+.hero-photo-frame {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 320px;
+  justify-self: end;
+  padding: 0.6rem;
+  border-radius: 26px;
+  background: linear-gradient(145deg, rgba(244, 127, 32, 0.18), rgba(24, 122, 140, 0.18));
+  border: 1px solid rgba(24, 122, 140, 0.18);
+  box-shadow: 0 18px 38px rgba(19, 33, 43, 0.14);
+}
+
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
 }
 
 .contact-bar {
@@ -255,6 +288,7 @@ footer {
 }
 
 @media (max-width: 860px) {
+  .hero-layout,
   .two-col,
   .project-list {
     grid-template-columns: 1fr;
@@ -263,6 +297,11 @@ footer {
   .hero,
   .panel {
     border-radius: 16px;
+  }
+
+  .hero-photo-frame {
+    justify-self: start;
+    max-width: 300px;
   }
 }
 
@@ -275,8 +314,22 @@ footer {
     padding: 1.15rem 1rem;
   }
 
+  .hero-layout {
+    gap: 0.95rem;
+  }
+
   .panel {
     padding: 1rem;
+  }
+
+  .hero-photo-frame {
+    max-width: none;
+    border-radius: 18px;
+    padding: 0.45rem;
+  }
+
+  .hero-photo {
+    border-radius: 14px;
   }
 
   .contact-bar {
@@ -331,5 +384,9 @@ footer {
 
   .contact-bar a {
     font-size: 0.89rem;
+  }
+
+  .hero-photo-frame {
+    padding: 0.35rem;
   }
 }
