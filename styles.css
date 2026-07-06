@@ -27,6 +27,10 @@ body {
   padding: 2.3rem 1rem 2.5rem;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 .bg-orb {
   position: fixed;
   border-radius: 50%;
@@ -112,12 +116,15 @@ h2 {
 }
 
 .contact-bar a {
+  flex: 0 1 auto;
   text-decoration: none;
   color: #fff;
   background: linear-gradient(120deg, var(--accent-deep), var(--accent));
   padding: 0.55rem 0.9rem;
   border-radius: 999px;
   font-size: 0.92rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -162,6 +169,18 @@ main {
 .timeline {
   margin: 0.2rem 0 0;
   padding-left: 1.25rem;
+}
+
+.panel p,
+.pill-list li,
+.simple-list li,
+.timeline li,
+.project-card p,
+.project-card span,
+.hero-subtitle,
+.location,
+footer p {
+  overflow-wrap: anywhere;
 }
 
 .pill-list li,
@@ -244,5 +263,73 @@ footer {
   .hero,
   .panel {
     border-radius: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 1rem 0.75rem 1.5rem;
+  }
+
+  .hero {
+    padding: 1.15rem 1rem;
+  }
+
+  .panel {
+    padding: 1rem;
+  }
+
+  .contact-bar {
+    gap: 0.6rem;
+  }
+
+  .contact-bar a {
+    flex: 1 1 100%;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 0.95rem;
+  }
+
+  .pill-list,
+  .simple-list,
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .project-list {
+    gap: 0.75rem;
+  }
+
+  .project-card {
+    padding: 0.9rem;
+  }
+
+  .bg-orb {
+    filter: blur(60px);
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 1.95rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero-subtitle,
+  .panel p,
+  .pill-list li,
+  .simple-list li,
+  .timeline li,
+  .project-card p,
+  footer p {
+    font-size: 0.96rem;
+  }
+
+  .contact-bar a {
+    font-size: 0.89rem;
   }
 }
