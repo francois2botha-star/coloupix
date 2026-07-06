@@ -1,0 +1,248 @@
+:root {
+  --ink: #13212b;
+  --ink-soft: #2f4a5b;
+  --paper: #fdfbf7;
+  --panel: rgba(255, 255, 255, 0.84);
+  --line: #d8d2c5;
+  --accent: #f47f20;
+  --accent-deep: #d95d02;
+  --ocean: #187a8c;
+  --shadow: 0 18px 45px rgba(19, 33, 43, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Archivo", "Segoe UI", sans-serif;
+  line-height: 1.65;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(244, 127, 32, 0.22), transparent 42%),
+    radial-gradient(circle at 85% 75%, rgba(24, 122, 140, 0.18), transparent 38%),
+    linear-gradient(135deg, #f6efe4 0%, #fefcf8 50%, #eef8fa 100%);
+  padding: 2.3rem 1rem 2.5rem;
+}
+
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+}
+
+.orb-1 {
+  width: 280px;
+  height: 280px;
+  top: -80px;
+  right: -50px;
+  background: rgba(244, 127, 32, 0.33);
+}
+
+.orb-2 {
+  width: 240px;
+  height: 240px;
+  left: -60px;
+  bottom: -70px;
+  background: rgba(24, 122, 140, 0.28);
+}
+
+.hero,
+.panel,
+footer {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  backdrop-filter: blur(6px);
+}
+
+.hero {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: clamp(1.4rem, 2.2vw, 2.2rem);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent-deep);
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  line-height: 1.15;
+}
+
+h1 {
+  margin: 0.4rem 0 0.8rem;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  margin-bottom: 0.65rem;
+}
+
+.hero-subtitle {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.hero-intro {
+  max-width: 72ch;
+}
+
+.contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1.1rem 0 0.5rem;
+}
+
+.contact-bar a {
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent-deep), var(--accent));
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.contact-bar a:hover,
+.contact-bar a:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(217, 93, 2, 0.28);
+}
+
+.location {
+  margin: 0.4rem 0 0;
+  color: var(--ocean);
+  font-weight: 600;
+}
+
+main {
+  margin-top: 1rem;
+}
+
+.panel {
+  margin-top: 0.95rem;
+  padding: 1.25rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.grid {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pill-list,
+.simple-list,
+.timeline {
+  margin: 0.2rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.pill-list li,
+.simple-list li,
+.timeline li {
+  margin: 0.5rem 0;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.project-card {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid #cadce2;
+  background: #fdfefe;
+  border-radius: 16px;
+  padding: 0.95rem;
+  display: block;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.12rem;
+}
+
+.project-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+}
+
+.project-card span {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--ocean);
+  box-shadow: 0 12px 24px rgba(24, 122, 140, 0.15);
+}
+
+.closing {
+  border: 1px solid rgba(244, 127, 32, 0.45);
+}
+
+footer {
+  margin-top: 0.95rem;
+  text-align: center;
+  padding: 0.5rem;
+  color: var(--ink-soft);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 550ms ease, transform 550ms ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 860px) {
+  .two-col,
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero,
+  .panel {
+    border-radius: 16px;
+  }
+}
